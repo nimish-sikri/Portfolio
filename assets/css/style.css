@@ -459,11 +459,12 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
+  background: hsla(240, 1%, 17%, 0.45);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 30px hsla(0, 0%, 0%, 0.2);
   z-index: 5;
 }
 
@@ -473,6 +474,32 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
+  position: relative;
+}
+
+.nav-glass-pill {
+  position: absolute;
+  background: hsla(0, 0%, 100%, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid hsla(0, 0%, 100%, 0.12);
+  border-radius: 10px;
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body.light-mode .nav-glass-pill {
+  background: hsla(210, 70%, 45%, 0.1);
+  border-color: hsla(210, 70%, 45%, 0.2);
+}
+
+.navbar-link {
+  position: relative;
+  z-index: 1;
 }
 
 .navbar-link {
@@ -749,12 +776,25 @@ main {
 }
 
 .clients-item img {
-  width: 100%;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
   filter: grayscale(1);
   transition: var(--transition-1);
 }
 
 .clients-item img:hover { filter: grayscale(0); }
+
+.clients-item .github-icon {
+  width: 120px;
+  height: 120px;
+  opacity: 0.6;
+  transition: var(--transition-1);
+}
+
+.clients-item .github-icon:hover {
+  opacity: 1;
+}
 
 
 
@@ -831,7 +871,70 @@ main {
 
 
 /**
- * skills 
+ * achievements grid
+ */
+
+.achievements-section { margin-bottom: 30px; }
+
+.achievements-section > .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.achievements-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.achievement-card {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+.achievement-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.achievement-card .achievement-title {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  margin-bottom: 4px;
+}
+
+.achievement-card .achievement-text {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.5;
+}
+
+.achievement-card .achievement-badge {
+  display: inline-block;
+  background: var(--bg-gradient-yellow-2);
+  color: var(--vegas-gold);
+  font-size: 11px;
+  font-weight: var(--fw-500);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+
+/**
+ * skills
  */
 
 .skills-title { margin-bottom: 20px; }
@@ -1024,6 +1127,15 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+}
+
+.project-tech {
+  color: var(--vegas-gold);
+  font-size: 12px;
+  font-weight: var(--fw-300);
+  margin-left: 10px;
+  margin-top: 4px;
+  line-height: 1.4;
 }
 
 
@@ -1738,6 +1850,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .clients-item { min-width: calc(25% - 38px); }
 
+  /* achievements */
+
+  .achievements-list { grid-template-columns: 1fr 1fr; }
+
 
 
   /**
@@ -1879,4 +1995,289 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+
+/*-----------------------------------*\
+  #TYPING ANIMATION
+\*-----------------------------------*/
+
+.typing-cursor {
+  font-weight: 100;
+  font-size: var(--fs-4);
+  color: var(--orange-yellow-crayola);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+/*-----------------------------------*\
+  #DOWNLOAD RESUME BUTTON
+\*-----------------------------------*/
+
+.download-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-gradient-yellow-2);
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  padding: 10px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--jet);
+  margin-bottom: 25px;
+  transition: var(--transition-1);
+  text-decoration: none;
+}
+
+.download-resume-btn:hover {
+  background: var(--bg-gradient-yellow-1);
+  color: var(--smoky-black);
+}
+
+.download-resume-btn ion-icon {
+  font-size: 18px;
+}
+
+
+/*-----------------------------------*\
+  #THEME TOGGLE
+\*-----------------------------------*/
+
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-1);
+}
+
+.theme-toggle-btn .theme-icon {
+  font-size: 20px;
+  color: var(--light-gray);
+  transition: var(--transition-1);
+}
+
+.theme-toggle-btn:hover .theme-icon {
+  color: var(--orange-yellow-crayola);
+}
+
+/* show/hide icons based on theme */
+body .dark-icon { display: block; }
+body .light-icon { display: none; }
+body.light-mode .dark-icon { display: none; }
+body.light-mode .light-icon { display: block; }
+
+
+/*-----------------------------------*\
+  #LIGHT MODE
+\*-----------------------------------*/
+
+body.light-mode {
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(220, 20%, 88%) 3%, hsl(220, 15%, 92%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(220, 15%, 90%, 0.251) 0%, hsla(220, 15%, 95%, 0) 100%), hsl(220, 15%, 93%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(210, 70%, 45%) 0%, hsla(210, 70%, 50%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(210, 70%, 45%, 0.12) 0%, hsla(210, 70%, 50%, 0) 59.86%), hsl(220, 15%, 93%);
+  --text-gradient-yellow: linear-gradient(to right, hsl(210, 70%, 40%), hsl(210, 80%, 50%));
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(220, 10%, 75%) 0%, hsla(220, 10%, 75%, 0) 50%);
+  --jet: hsl(220, 10%, 82%);
+  --onyx: hsl(220, 12%, 90%);
+  --eerie-black-1: hsl(220, 15%, 93%);
+  --eerie-black-2: hsl(220, 15%, 91%);
+  --smoky-black: hsl(220, 15%, 90%);
+  --white-1: hsl(220, 20%, 15%);
+  --white-2: hsl(220, 15%, 22%);
+  --orange-yellow-crayola: hsl(210, 70%, 45%);
+  --vegas-gold: hsl(210, 50%, 40%);
+  --light-gray: hsl(220, 10%, 35%);
+  --light-gray-70: hsla(220, 10%, 35%, 0.7);
+  --shadow-1: -4px 8px 24px hsla(220, 20%, 0%, 0.1);
+  --shadow-2: 0 16px 30px hsla(220, 20%, 0%, 0.1);
+  --shadow-3: 0 16px 40px hsla(220, 20%, 0%, 0.1);
+  --shadow-4: 0 25px 50px hsla(220, 20%, 0%, 0.08);
+  --shadow-5: 0 24px 80px hsla(220, 20%, 0%, 0.1);
+}
+
+body.light-mode .name,
+body.light-mode .h2,
+body.light-mode .h3,
+body.light-mode .h4 {
+  color: hsl(220, 20%, 15%);
+}
+
+body.light-mode .navbar-link {
+  color: hsl(220, 10%, 40%);
+}
+
+body.light-mode .navbar-link.active {
+  color: hsl(210, 70%, 45%);
+}
+
+body.light-mode .download-resume-btn {
+  color: hsl(210, 70%, 45%);
+  border-color: hsl(210, 70%, 45%);
+}
+
+body.light-mode .achievement-badge {
+  color: hsl(210, 70%, 40%);
+}
+
+body.light-mode .navbar {
+  background: hsla(220, 15%, 95%, 0.45);
+  border-color: hsla(220, 10%, 80%, 0.3);
+  box-shadow: 0 -4px 30px hsla(220, 20%, 0%, 0.08);
+}
+
+body.light-mode .service-icon-box img {
+  filter: brightness(0.3) saturate(2) hue-rotate(180deg);
+}
+
+/* card hover pop-up effect */
+.service-item.revealed,
+.achievement-card.revealed,
+.content-card,
+.skills-list {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item.revealed:hover,
+.achievement-card.revealed:hover,
+.content-card:hover,
+.skills-list:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.3);
+}
+
+body.light-mode .service-item.revealed:hover,
+body.light-mode .achievement-card.revealed:hover,
+body.light-mode .content-card:hover,
+body.light-mode .skills-list:hover {
+  box-shadow: 0 10px 30px hsla(220, 20%, 0%, 0.15);
+}
+
+body.light-mode .project-link::after {
+  background: hsl(220, 20%, 25%);
+  color: hsl(0, 0%, 95%);
+  border-color: hsl(220, 15%, 35%);
+}
+
+body.light-mode .mapbox iframe {
+  filter: invert(0.9) hue-rotate(180deg) saturate(0.3) brightness(1.1);
+}
+
+
+/*-----------------------------------*\
+  #PROJECT TOOLTIP
+\*-----------------------------------*/
+
+.project-link {
+  position: relative;
+}
+
+.project-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: hsl(240, 2%, 13%);
+  color: var(--light-gray);
+  font-size: 12px;
+  font-weight: var(--fw-300);
+  line-height: 1.5;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--jet);
+  width: 250px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: var(--shadow-2);
+}
+
+.project-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/*-----------------------------------*\
+  #PAGE TRANSITIONS
+\*-----------------------------------*/
+
+article {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+article.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/*-----------------------------------*\
+  #SCROLL REVEAL ANIMATION
+\*-----------------------------------*/
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 25px;
+  width: 42px;
+  height: 42px;
+  background: var(--bg-gradient-yellow-2);
+  color: var(--orange-yellow-crayola);
+  border: 1px solid var(--jet);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 100;
+  box-shadow: var(--shadow-2);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
 }

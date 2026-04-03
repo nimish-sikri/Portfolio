@@ -5,11 +5,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Nimish Sikri - Portfolio</title>
+
+  <!-- SEO meta tags -->
+  <meta name="description" content="Nimish Sikri — Software Developer Engineer at Keysight Technologies. B.Tech CSE from NSUT. Guardian on LeetCode (2600+), Master on Codeforces (2200+), 6-star on CodeChef (2400+). Full-stack developer with expertise in C++, React, Next.js, Spring Boot.">
+  <meta name="keywords" content="Nimish Sikri, Software Developer, SDE, Keysight Technologies, NSUT, Competitive Programming, LeetCode Guardian, Codeforces Master, Full Stack Developer, Portfolio">
+  <meta name="author" content="Nimish Sikri">
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nimish Sikri - Software Developer Engineer">
+  <meta property="og:description" content="SDE at Keysight Technologies | B.Tech CSE, NSUT | LeetCode Guardian (2600+) | Codeforces Master (2200+) | 1800+ problems solved">
+  <meta property="og:image" content="./assets/images/my-avatar.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nimish Sikri - Software Developer Engineer">
+  <meta name="twitter:description" content="SDE at Keysight Technologies | B.Tech CSE, NSUT | LeetCode Guardian (2600+) | Codeforces Master (2200+)">
 
   <!--
     - favicon
   -->
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TKPPXT3XN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1TKPPXT3XN');
+  </script>
+
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
   <!--
@@ -42,13 +67,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Sadhin Halder" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Nimish Sikri" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Sadhin Halder</h1>
+          <h1 class="name" title="Nimish Sikri">Nimish Sikri</h1>
 
-          <p class="title">Web Developer</p>
+          <p class="title" style="display:flex;align-items:center;justify-content:center;min-height:1.6em;"><span id="typed-text"></span><span class="typing-cursor">|</span></p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -74,7 +99,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:sadhin.halder64@gmail.com" class="contact-link">sadhin.halder64@gmail.com</a>
+              <a href="mailto:nimishsikri02@gmail.com" class="contact-link">nimishsikri02@gmail.com</a>
             </div>
 
           </li>
@@ -88,21 +113,7 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+12133522795" class="contact-link">+880 178 339 8799</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1995-10-15">October 15, 1995</time>
+              <a href="tel:+919650556737" class="contact-link">+91 9650556737</a>
             </div>
 
           </li>
@@ -116,7 +127,7 @@
             <div class="contact-info">
               <p class="contact-title">Location</p>
 
-              <address>Rupatoli, Barishal-8200, Bangladesh</address>
+              <address>Rohini, Delhi-110085, India</address>
             </div>
 
           </li>
@@ -128,19 +139,19 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://www.facebook.com/sadhin555" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href="https://github.com/nimish-sikri" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://bd.linkedin.com/in/sadhin555" class="social-link">
+            <a href="https://www.linkedin.com/in/nimish-sikri-661635125/" class="social-link" target="_blank">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://www.instagram.com/sadhin.bd/" class="social-link">
+            <a href="https://www.instagram.com/nimishsikri/" class="social-link" target="_blank">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -168,10 +179,12 @@
       <nav class="navbar">
 
         <ul class="navbar-list">
+          <div class="nav-glass-pill" id="navGlassPill"></div>
 
           <li class="navbar-item">
             <button class="navbar-link  active" data-nav-link>About</button>
           </li>
+
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
@@ -182,11 +195,14 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link>Contact</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light/Dark Mode">
+              <ion-icon name="sunny-outline" class="theme-icon light-icon"></ion-icon>
+              <ion-icon name="moon-outline" class="theme-icon dark-icon"></ion-icon>
+            </button>
           </li>
 
         </ul>
@@ -209,12 +225,13 @@
 
         <section class="about-text">
           <p>
-            I have been working as a professional Web Developer and SEO optimizer for a long time now.
-			I have extensive experience with both JavaScript (MERN) and PHP, making me well-equipped to handle any kind of web development project.
+            I'm a Software Developer Engineer at Keysight Technologies with a B.Tech in Computer Science from NSUT, Delhi.
+            I have experience building high-performance systems using C++, C#, .NET, and full-stack web applications with React, Next.js, Node.js, and Spring Boot.
           </p>
 
           <p>
-            I have a strong understanding of how to code in PHP, JavaScript, React, Node.js, Laravel and WordPress Theme & Plugin besides that I have a lot of experience with front-end technologies like HTML, CSS, JavaScript, jQuery, Bootstrap, Tailwind CSS and SASS.
+            I'm also a competitive programmer with a Guardian rating (2600+) on LeetCode, Master (2200+) on Codeforces,
+            and 6-star (2400+) on CodeChef. I've solved 1800+ problems on LeetCode and ranked globally in contests like Meta Hacker Cup and Flipkart Grid.
           </p>
         </section>
 
@@ -232,15 +249,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/icon-dev.svg" alt="software development icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web Design</h4>
+                <h4 class="h4 service-item-title">Software Development</h4>
 
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  Building high-performance systems with C++, C#, .NET, and WPF for test and measurement platforms.
                 </p>
               </div>
 
@@ -249,14 +265,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-design.svg" alt="web development icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web Development</h4>
+                <h4 class="h4 service-item-title">Full-Stack Web Development</h4>
 
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  End-to-end web apps with React, Next.js, Node.js, Spring Boot, and modern databases.
                 </p>
               </div>
 
@@ -265,14 +281,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/icon-app.svg" alt="competitive programming icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile Apps</h4>
+                <h4 class="h4 service-item-title">Competitive Programming</h4>
 
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                  Guardian on LeetCode, Master on Codeforces, 6-star on CodeChef with 1800+ problems solved.
                 </p>
               </div>
 
@@ -281,14 +297,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                <img src="./assets/images/icon-photo.svg" alt="backend icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
+                <h4 class="h4 service-item-title">Backend & DevOps</h4>
 
                 <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  Microservices architecture, Docker, Kafka, network automation, and database management.
                 </p>
               </div>
 
@@ -305,129 +321,6 @@
 
         <section class="testimonials">
 
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Md. Sakib Ahamed</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    I wholeheartedly recommend Sadhin Halder to anyone in need of top-notch web development services. His professionalism, creativity, and technical expertise are unmatched. Thanks to his efforts, my business now has a professional and impactful online presence that sets us apart from the competition. I am incredibly grateful for their outstanding work and look forward to working with them on future projects.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mrs. Sharmin Aktar</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    The design of the website is visually stunning and captures the essence of my business. It showcases my products/services in an attractive and engaging manner, making a lasting impression on visitors. The layout is intuitive, allowing users to navigate effortlessly and find the information they need.
-					I highly recommend "Sadhin Halder" to anyone in need of professional Web Development Services.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Md. Safiqul Rahaman</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    I am extremely satisfied with the Website Development Services provided by Sadhin Halder. He has exceeded my expectations and delivered a website that perfectly represents my business.
-					I highly recommend "Sadhin Halder" to anyone in need of professional Web Development services.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Sabina Aktar</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    I wholeheartedly recommend Sadhin Halder to anyone in need of top-notch web development services. His professionalism, creativity, and technical expertise are unmatched. Thanks to his efforts, my business now has a professional and impactful online presence that sets us apart from the competition. I am incredibly grateful for their outstanding work and look forward to working with them on future projects.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2023-06-14">14 June, 2023</time>
-
-              <div data-modal-text>
-                <p>
-                  Sadhin was hired to create a corporate identity. We were very pleased with the work done. He has a
-                  lot of experience and is very concerned about the needs of client.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
 
 
         <!--
@@ -436,43 +329,37 @@
 
         <section class="clients">
 
-          <h3 class="h3 clients-title">Clients</h3>
+          <h3 class="h3 clients-title">Coding Profiles</h3>
 
           <ul class="clients-list has-scrollbar">
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              <a href="https://leetcode.com/u/qwertyish/" target="_blank">
+                <img src="./assets/images/LeetCode_Logo_1.png" alt="LeetCode">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
+              <a href="https://www.codechef.com/users/nimishsikri02" target="_blank">
+                <img src="./assets/images/Codechef.png" alt="CodeChef">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
+              <a href="https://codeforces.com/profile/romegenixxx" target="_blank">
+                <img src="./assets/images/codeforces-removebg-preview.png" alt="Codeforces">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
+              <a href="https://www.geeksforgeeks.org/profile/nimishsikri02?tab=activity" target="_blank">
+                <img src="./assets/images/GeeksForGeeks_logo.png" alt="GeeksforGeeks">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              <a href="https://github.com/nimish-sikri" target="_blank">
+                <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="120" height="120"><path fill="#888" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               </a>
             </li>
 
@@ -496,6 +383,11 @@
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
+        <a href="./assets/Nimish_Sikri_Resume.pdf" download class="download-resume-btn">
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download Resume</span>
+        </a>
+
         <section class="timeline">
 
           <div class="title-wrapper">
@@ -510,41 +402,36 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Barishal University, BSc in CSE</h4>
+              <h4 class="h4 timeline-item-title">Netaji Subhas University of Technology (NSUT)</h4>
 
-              <span>2014 — 2018</span>
+              <span>2021 — 2025</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                B.Tech in Computer Science and Engineering, CGPA - 8.03
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Dhaka Govt Science College, HSC</h4>
+              <h4 class="h4 timeline-item-title">DLDAV Model School — Class XII</h4>
 
-              <span>2010 — 2012</span>
+              <span>2020 — 2021</span>
 
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                CBSE, Aggregate - 96.8%
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Mollapara High School, SSC</h4>
+              <h4 class="h4 timeline-item-title">DLDAV Model School — Class X</h4>
 
-              <span>2008 — 2010</span>
+              <span>2018 — 2019</span>
 
               <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
+                CBSE, Aggregate - 94.8%
               </p>
 
             </li>
@@ -567,47 +454,145 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">IT Engineer & Programmer</h4>
+              <h4 class="h4 timeline-item-title">Keysight Technologies — Software Developer Engineer</h4>
 
-              <span>2022 — Present</span>
+              <span>Mar 2025 — Present</span>
 
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                Contributing to high-performance test and measurement platforms (M8070B, M8110A) using C++, C#, .NET, and WPF. Participating in architectural design discussions, working across UI, backend services, and hardware interaction layers.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Laravel Web Application Devloper</h4>
+              <h4 class="h4 timeline-item-title">Fractal — Software Developer Intern</h4>
 
-              <span>2020 — 2022</span>
+              <span>Dec 2024 — Feb 2025</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Built a staffing demand forecasting model using ML with 91% accuracy. Developed an AI-integrated DLP dashboard automating classification of 2000+ daily alerts via Forcepoint API.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web Designer</h4>
+              <h4 class="h4 timeline-item-title">Genpact — Software Developer Intern</h4>
 
-              <span>2018 — 2020</span>
+              <span>Jun 2024 — Aug 2024</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Led automation initiatives in Net DevOps using Itential (Python & Ansible), achieving 25% reduction in manual tasks. Designed workflows for configuration management and network monitoring.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">CS For All & Scaler Academy — Teaching Assistant Intern</h4>
+
+              <span>Nov 2023 — Jun 2024</span>
+
+              <p class="timeline-text">
+                Assisted hundreds of students in resolving queries on DSA, C++, Java, and OOPS with an overall rating of 4.8/5.
               </p>
 
             </li>
 
           </ol>
+
+        </section>
+
+        <section class="achievements-section">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Achievements & Awards</h3>
+          </div>
+
+          <div class="achievements-list">
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Global Rank 1,601</span>
+              <h4 class="achievement-title">Meta Hacker Cup 2024</h4>
+              <p class="achievement-text">Out of 25,000+ participants. Awarded a Meta T-shirt.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Guardian — 2600+</span>
+              <h4 class="achievement-title">LeetCode</h4>
+              <p class="achievement-text">1800+ problems solved. Global rank 14 / 30,000+ in Biweekly Contest 154.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Master — 2200+ &nbsp;|&nbsp; 6-Star — 2400+</span>
+              <h4 class="achievement-title">Codeforces & CodeChef</h4>
+              <p class="achievement-text">Global rank 3 in CodeChef Starters 163 Div-1.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Winner</span>
+              <h4 class="achievement-title">Ode2Code by Xiaomi</h4>
+              <p class="achievement-text">Winner out of 40,000+ teams.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Semi-finalist</span>
+              <h4 class="achievement-title">Flipkart Grid 5.0</h4>
+              <p class="achievement-text">Among 5 lakh+ participants — Software Development Track.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Selected</span>
+              <h4 class="achievement-title">Amazon ML Summer School 2023</h4>
+              <p class="achievement-text">Out of 50,000+ applicants.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">AIR 4</span>
+              <h4 class="achievement-title">Graph Coding Challenge — Algo University</h4>
+              <p class="achievement-text">All India Rank 4 in the Graph Coding Challenge.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Finalist</span>
+              <h4 class="achievement-title">TechGig CodeGladiators</h4>
+              <p class="achievement-text">Among 2 lakh+ participants.</p>
+            </div>
+
+          </div>
+
+        </section>
+
+        <section class="achievements-section">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Positions of Responsibility</h3>
+          </div>
+
+          <div class="achievements-list">
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Jul 2021 — Present</span>
+              <h4 class="achievement-title">IEEE NSUT & IOSD NSUT — Joint Secretary & Core Committee Member</h4>
+              <p class="achievement-text">Overseeing operational and administrative functions within the technical societies of NSUT.</p>
+            </div>
+
+            <div class="achievement-card">
+              <span class="achievement-badge">Oct 2022</span>
+              <h4 class="achievement-title">MOKSHA '22 — Event Management Department</h4>
+              <p class="achievement-text">Actively involved in organising and executing various cultural events at NSUT's annual cultural fest.</p>
+            </div>
+
+          </div>
 
         </section>
 
@@ -620,33 +605,7 @@
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Web Design</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Laravel</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
+                <h5 class="h5">C/C++</h5>
                 <data value="90">90%</data>
               </div>
 
@@ -659,7 +618,85 @@
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
+                <h5 class="h5">React / Next.js / TypeScript</h5>
+                <data value="85">85%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Python</h5>
+                <data value="75">75%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">C# / .NET / WPF</h5>
+                <data value="75">75%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Java / Spring Boot</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Node.js / Express.js</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">MongoDB / PostgreSQL / MySQL</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Docker / Kafka / DevOps</h5>
                 <data value="65">65%</data>
               </div>
 
@@ -698,15 +735,15 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn>Full-stack</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn>Microservices</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>MERN</button>
             </li>
 
           </ul>
@@ -730,15 +767,15 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item>Full-stack</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item>Microservices</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item>MERN</button>
               </li>
 
             </ul>
@@ -747,164 +784,82 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="full-stack">
+              <a href="https://github.com/nimish-sikri/rozgar-hub" target="_blank" class="project-link" data-tooltip="Job portal with OAuth2 auth, resume uploads, advanced filtering by salary/location, and admin dashboard for managing job postings.">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/project-1.jpg" alt="Rozgar Hub" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">Rozgar Hub</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Full-stack</p>
+
+                <p class="project-tech">TypeScript, Next.js, PostgreSQL, Prisma, TailwindCSS, OAuth2</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="microservices">
+              <a href="https://github.com/nimish-sikri/aerio" target="_blank" class="project-link" data-tooltip="Microservices fitness tracker with 6 Spring Boot services, Kafka event-driven AI pipeline, Keycloak OAuth2, and real-time React dashboard.">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/project-2.png" alt="Aerio" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title">Aerio</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Microservices</p>
+
+                <p class="project-tech">Java, Spring Boot, Kafka, MongoDB, PostgreSQL, Keycloak, React, Docker</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="full-stack">
+              <a href="https://github.com/nimish-sikri/ChatGPT" target="_blank" class="project-link" data-tooltip="ChatGPT-like interface with real-time AI replies, chat history, and Supabase authentication with email/password login.">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="./assets/images/project-3.jpg" alt="GeniChat" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title">GeniChat</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Full-stack</p>
+
+                <p class="project-tech">Next.js, React, TypeScript, FastAPI, Supabase, ShadcnUI</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="mern">
+              <a href="https://github.com/nimish-sikri/Friendify-backend" target="_blank" class="project-link" data-tooltip="Social media platform with image uploads, like/dislike, real-time chat, user auth, and light/dark mode.">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/project-4.png" alt="Friendify" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Brawlhalla</h3>
+                <h3 class="project-title">Friendify</h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category">MERN</p>
 
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
+                <p class="project-tech">React, Node.js, Express.js, MongoDB, Material UI</p>
 
               </a>
             </li>
@@ -919,193 +874,6 @@
 
 
 
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2023</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
 
 
 
@@ -1124,7 +892,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d751.8024048067483!2d90.36946074964585!3d22.691581294848287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755340cb26f22b7%3A0x5feaf8d79e362924!2z4Kaw4Ka-4Ka54Ka-4KakIOCmhuCmqOCni-Cmr-CmvOCmvuCmsCDgprngpr7gprjgpqrgpr7gpqTgpr7gprIgKFJhaGF0IEFud2FyIEhvc3BpdGFsKQ!5e0!3m2!1sen!2sbd!4v1694759807576!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27994.045498204594!2d77.0891!3d28.7325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01011f3b67c7%3A0x4d03dba2e0f3b82a!2sRohini%2C%20Delhi!5e0!3m2!1sen!2sin!4v1694759807576!5m2!1sen!2sin"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -1133,10 +901,10 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="text" name="name" class="form-input" placeholder="Full name" required data-form-input>
 
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
@@ -1162,6 +930,11 @@
 
 
 
+
+  <!-- back to top button -->
+  <button class="back-to-top" id="backToTop" title="Back to top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
 
   <!--
     - custom js link
