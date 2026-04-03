@@ -769,6 +769,7 @@ a, button, .navbar-link, .clients-item, .project-item, .skills-item, .filter-ite
   padding: 25px;
   padding-bottom: 25px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;

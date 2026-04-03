@@ -187,7 +187,7 @@ form.addEventListener("submit", function (e) {
 
 
 // scroll reveal animation
-const revealElements = document.querySelectorAll(".service-item, .achievement-card, .timeline-item, .skills-item, .project-item, .clients-item, .about-text, .service-title, .mapbox, .contact-form");
+const revealElements = document.querySelectorAll(".service-item, .achievement-card, .timeline-item, .skills-item, .project-item, .about-text, .service-title, .mapbox, .contact-form");
 
 revealElements.forEach(el => el.classList.add("scroll-reveal"));
 
