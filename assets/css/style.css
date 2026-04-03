@@ -500,9 +500,11 @@ body.light-mode .nav-glass-pill {
 .navbar-link {
   position: relative;
   z-index: 1;
+}
+
+a, button, .navbar-link, .clients-item, .project-item, .skills-item, .filter-item, .service-item, .achievement-card {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  user-select: none;
 }
 
 .navbar-link {
