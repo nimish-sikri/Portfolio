@@ -54,6 +54,4 @@ python -m http.server 5500
 - **LinkedIn:** [nimish-sikri](https://www.linkedin.com/in/nimish-sikri-661635125/)
 - **GitHub:** [nimish-sikri](https://github.com/nimish-sikri)
 
-## License
 
-MIT
