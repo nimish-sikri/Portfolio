@@ -500,6 +500,9 @@ body.light-mode .nav-glass-pill {
 .navbar-link {
   position: relative;
   z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 .navbar-link {
