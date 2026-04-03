@@ -790,16 +790,6 @@ a, button, .navbar-link, .clients-item, .project-item, .skills-item, .filter-ite
 
 .clients-item img:hover { filter: grayscale(0); }
 
-.clients-item .github-icon {
-  width: 120px;
-  height: 120px;
-  opacity: 0.6;
-  transition: var(--transition-1);
-}
-
-.clients-item .github-icon:hover {
-  opacity: 1;
-}
 
 
 
